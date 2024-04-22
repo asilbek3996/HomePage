@@ -1,6 +1,11 @@
 package com.example.homepage
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Window
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -69,5 +74,28 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        drawerLayout = findViewById(R.id.drawer)
+        val more = findViewById<ImageView>(R.id.more)
+        binding.includeMain.menu.setOnClickListener {
+            drawerLayout.openDrawer(binding.navView)
+        }
+        more.setOnClickListener {
+showCustomDialogBox()
+        }
+
+    }
+
+    private fun showCustomDialogBox() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.about_custom_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val exit: ImageView = dialog.findViewById(R.id.exit)
+        exit.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 }
