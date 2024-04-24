@@ -1,5 +1,6 @@
 package com.example.homepage.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.homepage.R
+import com.example.homepage.activity.DarslarActivity
 import com.example.homepage.databinding.FragmentHomeBinding
 
 
@@ -41,6 +43,38 @@ lateinit var binding: FragmentHomeBinding
         val editText: EditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text)
         editText.setTextColor(resources.getColor(android.R.color.black))
         editText.setHintTextColor(resources.getColor(R.color.gray))
+
+        val intent = Intent(requireContext(),DarslarActivity::class.java)
+        binding.kotlin.setOnClickListener {
+            intent.apply {
+              putExtra("Til","Kotlin")
+            }
+            startActivity(intent)
+        }
+        binding.java.setOnClickListener {
+            intent.apply {
+              putExtra("Til","Java")
+            }
+            startActivity(intent)
+        }
+        binding.python.setOnClickListener {
+            intent.apply {
+                putExtra("Til","Python")
+            }
+            startActivity(intent)
+        }
+        binding.cpp.setOnClickListener {
+            intent.apply {
+                putExtra("Til","C++")
+            }
+            startActivity(intent)
+        }
+        binding.scratch.setOnClickListener {
+            intent.apply {
+                putExtra("Til","Scratch")
+            }
+            startActivity(intent)
+        }
 
     }
     companion object {

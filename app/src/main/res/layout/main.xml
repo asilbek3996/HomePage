@@ -6,7 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     app:layoutDescription="@xml/main_scene">
-
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/top_background"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:id="@+id/iiii" />
     <androidx.cardview.widget.CardView
         android:id="@+id/cardToolbar"
         android:layout_width="match_parent"
@@ -14,7 +20,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="#96D141"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,8 +30,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="8dp"
             android:gravity="center_vertical"
+            android:background="#96D141"
+            android:paddingHorizontal="8dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -42,6 +49,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Home"
+                android:background="@android:color/transparent"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -72,7 +80,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/gray"
+        app:cardBackgroundColor="#96D141"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,9 +92,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="#96D141"
             app:itemIconTint="@drawable/bottom_nav_view_item"
-            app:itemRippleColor="@color/blue"
+            app:itemRippleColor="@color/light_green"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/nav_view" />
     </androidx.cardview.widget.CardView>
